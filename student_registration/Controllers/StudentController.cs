@@ -19,7 +19,7 @@ namespace student_registration.Controllers
             _studentService = studentService;
         }
 
-        [HttpPost]
+        [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] Student student)
         {
             if(student == null)
@@ -36,7 +36,7 @@ namespace student_registration.Controllers
 
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var students = await _studentService.GetActiveStudentsAsync();
