@@ -20,7 +20,7 @@ namespace StudentRegistration.Application.services
         // 1. Register Student
         public async Task<bool> RegisterStudentAsync(Student student)
         {
-            // Business Logic: Set initial values before saving
+          
             student.CreatedDate = DateTime.Now;
             student.IsDeleted = false;
 
@@ -43,7 +43,7 @@ namespace StudentRegistration.Application.services
         // 4. Update Student
         public async Task<bool> UpdateStudentAsync(Student student)
         {
-            student.UpdatedDate = DateTime.Now; // Log when the change happened
+            student.UpdatedDate = DateTime.Now;
             await _studentRepository.UpdateAsync(student);
             return await _studentRepository.SaveChangesAsync();
         }
@@ -51,10 +51,10 @@ namespace StudentRegistration.Application.services
         // 5. Delete (Soft Delete)
         public async Task<bool> DeleteStudentAsync(int id)
         {
-            // We call the repository's soft delete logic
+        
             await _studentRepository.SoftDeleteAsync(id);
 
-            // We save the changes to the DB
+
             return await _studentRepository.SaveChangesAsync();
         }
     }
