@@ -5,10 +5,10 @@ namespace StudentRegistration.Domain.Entities
 {
     public class Student
     {
-        
+
         [Key]
         public int Id { get; set; }
-       
+
         [Required]
         [StringLength(12)]
         public string NIC { get; set; } = string.Empty;
@@ -37,11 +37,19 @@ namespace StudentRegistration.Domain.Entities
 
         public string BasicQualifications { get; set; } = string.Empty;
 
-     
+
         public bool IsDeleted { get; set; } = false;
 
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
         public DateTime? UpdatedDate { get; set; }
+
+
+       
+        public int UserId { get; set; }
+    
+        public User User { get; set; }
+       
+
     }
 }

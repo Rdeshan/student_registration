@@ -54,7 +54,6 @@ namespace StudentRegistration.Application.services
         
             await _studentRepository.SoftDeleteAsync(id);
 
-
             return await _studentRepository.SaveChangesAsync();
         }
     }
