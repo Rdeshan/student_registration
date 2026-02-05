@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using StudentRegistration.Application.Interfaces;
 using StudentRegistration.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using StudentRegistration.Application.services;
 using StudentRegistration.Infrastructure.Data; 
 
