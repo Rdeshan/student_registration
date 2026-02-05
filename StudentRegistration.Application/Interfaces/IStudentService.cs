@@ -17,7 +17,7 @@ namespace StudentRegistration.Application.Interfaces
         Task<Student?> GetStudentByIdAsync(int id);
      
         Task<bool> UpdateStudentAsync(Student student);
-        // Business logic for soft-deleting a student
+  
         Task<bool> DeleteStudentAsync(int id);
     }
 }

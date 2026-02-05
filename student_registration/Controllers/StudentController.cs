@@ -35,12 +35,25 @@ namespace student_registration.Controllers
             return BadRequest("could not register the student ");
 
         }
+        [HttpGet("GetStudent/{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+           
+            var student = await _studentService.GetStudentByIdAsync(id);
+
+            if (student == null)
+            {
+                return NotFound($"Student with ID {id} not found.");
+            }
+
+            return Ok(student);
+        }
 
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var students = await _studentService.GetActiveStudentsAsync();
-
+            
             return Ok(students);
         }
 
@@ -56,7 +69,7 @@ namespace student_registration.Controllers
             return NotFound($"user id {id} not found ");
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("UpdateStudent/{id}")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] Student student)
         {
 

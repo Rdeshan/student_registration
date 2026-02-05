@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "student_registration", "student_registration\student_registration.csproj", "{C162ED71-30A6-4BC1-AB5E-ACB47E5459DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "student_registration", "student_registration\student_registration.csproj", "{C162ED71-30A6-4BC1-AB5E-ACB47E5459DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRegistration.Domain", "StudentRegistration.Domain\StudentRegistration.Domain.csproj", "{11CC0B87-7081-4EB0-8ED1-2C8E7ECFEC5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentRegistration.Domain", "StudentRegistration.Domain\StudentRegistration.Domain.csproj", "{11CC0B87-7081-4EB0-8ED1-2C8E7ECFEC5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRegistration.Application", "StudentRegistration.Application\StudentRegistration.Application.csproj", "{4197DB28-5C83-4457-8DE5-1C39852635D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentRegistration.Application", "StudentRegistration.Application\StudentRegistration.Application.csproj", "{4197DB28-5C83-4457-8DE5-1C39852635D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRegistration.Infrastructure", "StudentRegistration.Infrastructure\StudentRegistration.Infrastructure.csproj", "{DA50E3B9-173B-48A9-B1EE-B558A1FB817F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentRegistration.Infrastructure", "StudentRegistration.Infrastructure\StudentRegistration.Infrastructure.csproj", "{DA50E3B9-173B-48A9-B1EE-B558A1FB817F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

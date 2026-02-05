@@ -1,0 +1,66 @@
+﻿@page
+@model student_registration.Pages.Students.CreateModel
+@{
+    ViewData["Title"] = "Register Student";
+}
+<div>
+<h1 class="mb-4">Register Student</h1>
+
+<form method="post">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label asp-for="Student.NIC" class="form-label">NIC</label>
+            <input asp-for="Student.NIC" class="form-control" />
+            <span asp-validation-for="Student.NIC" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Student.FirstName" class="form-label">First Name</label>
+            <input asp-for="Student.FirstName" class="form-control" />
+            <span asp-validation-for="Student.FirstName" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Student.MiddleName" class="form-label">Middle Name</label>
+            <input asp-for="Student.MiddleName" class="form-control" />
+            <span asp-validation-for="Student.MiddleName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label asp-for="Student.LastNameWithInitials" class="form-label">Last Name with Initials</label>
+            <input asp-for="Student.LastNameWithInitials" class="form-control" />
+            <span asp-validation-for="Student.LastNameWithInitials" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Student.Address" class="form-label">Address</label>
+            <input asp-for="Student.Address" class="form-control" />
+            <span asp-validation-for="Student.Address" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Student.Email" class="form-label">Email</label>
+            <input asp-for="Student.Email" class="form-control" />
+            <span asp-validation-for="Student.Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label asp-for="Student.Phone" class="form-label">Phone</label>
+            <input asp-for="Student.Phone" class="form-control" />
+            <span asp-validation-for="Student.Phone" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Student.BasicQualifications" class="form-label">Basic Qualifications</label>
+            <input asp-for="Student.BasicQualifications" class="form-control" />
+            <span asp-validation-for="Student.BasicQualifications" class="text-danger"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+    <a asp-page="/Students/Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

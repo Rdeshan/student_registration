@@ -7,20 +7,18 @@ using StudentRegistration.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // 3.  register the database
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<IStudentRepository,StudentRepository>();
-builder.Services.AddScoped<IStudentService ,StudentService> ();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IStudentService , StudentService> ();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
-
-
-
-
+builder.Services.AddHttpClient();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

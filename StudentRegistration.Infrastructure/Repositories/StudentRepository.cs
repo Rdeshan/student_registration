@@ -21,8 +21,10 @@ namespace StudentRegistration.Infrastructure.Repositories
 
         public async Task<IEnumerable<Student>> GetAllActiveAsync()
         {
-       
-            return await _context.Students.ToListAsync();
+
+            return await _context.Students
+                          .Where(s => !s.IsDeleted) // only active students
+                          .ToListAsync();
         }
     
 

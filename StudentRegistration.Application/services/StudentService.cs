@@ -38,7 +38,7 @@ namespace StudentRegistration.Application.services
         public async Task<Student?> GetStudentByIdAsync(int id)
         {
             return await _studentRepository.GetByIdAsync(id);
-        }
+        }   
 
         // 4. Update Student
         public async Task<bool> UpdateStudentAsync(Student student)
