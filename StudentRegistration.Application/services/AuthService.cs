@@ -17,14 +17,6 @@ namespace StudentRegistration.Application.services
             _authRepository = authRepository;
         }
 
-        //create this service i need a implementation , logic how this accsess  the repository 
-        /*
-         *    public async Task<User?> ValidateUserAsync(String email , String password)
-         {
-             return await _context.Users
-             .FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
-          
-               */
         public async Task<User?> ValidateUserAsync(String email,String password)
         {
             var user = await _authRepository.ValidateUserAsync(email, password);

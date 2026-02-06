@@ -7,7 +7,6 @@ namespace StudentRegistration.Application.Interfaces
     {
         Task<User?> ValidateUserAsync(String email, String password);
         Task AddUserAsync(User user);
-
         Task<bool> SaveChangesAsync();
 
 

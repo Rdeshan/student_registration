@@ -1,10 +1,11 @@
-
 using Microsoft.EntityFrameworkCore;
 using StudentRegistration.Application.Interfaces;
 using StudentRegistration.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using StudentRegistration.Application.services;
-using StudentRegistration.Infrastructure.Data; 
+using StudentRegistration.Infrastructure.Data;
+using Microsoft.AspNetCore.Mvc.Razor;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,16 +15,37 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// Place this BEFORE app.UseAuthorization()
+
+
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IStudentService , StudentService> ();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAuthService,AuthService>();
 
 
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 var app = builder.Build();
+
+
+app.MapGet("/", (HttpContext context) =>
+{
+    context.Response.Redirect("/Account/LoginRegister?IsLogIn=true");
+    return Task.CompletedTask;
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -32,6 +54,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.UseCors();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

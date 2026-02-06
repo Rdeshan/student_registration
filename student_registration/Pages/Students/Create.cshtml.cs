@@ -43,12 +43,10 @@ namespace student_registration.Pages.Students
 
                 if (response.IsSuccessStatusCode)
                 {
-                   
                     return RedirectToPage("/Students/Index");
                 }
                 else
-                {
-                   
+                {  
                     ModelState.AddModelError(string.Empty, "Failed to create student.");
                     return Page();
                 }

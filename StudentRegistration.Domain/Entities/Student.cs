@@ -45,11 +45,7 @@ namespace StudentRegistration.Domain.Entities
         public DateTime? UpdatedDate { get; set; }
 
 
-       
-        public int UserId { get; set; }
     
-        public User User { get; set; }
-       
 
     }
 }

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Transactions;
 
 
 namespace StudentRegistration.Domain.Entities
 {
     public class User
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -15,10 +17,8 @@ namespace StudentRegistration.Domain.Entities
 
         [Required]
         public string Password { get; set; }
+            
 
-        
-     
-        public Student Student { get; set; }
-       
+      
     }
 }

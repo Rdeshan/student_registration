@@ -1,0 +1,23 @@
+﻿@page
+@model student_registration.Pages.Account.LoginRegisterModel
+@{
+
+    var isLogIn = Model.IsLogIn;
+    Layout = isLogIn ? null : "_Layout";
+}
+
+<h2>@(isLogIn ? "Login" : "Register a New Admin")</h2>
+
+<form method="post" >
+    <input type="hidden" asp-for="IsLogIn" />
+    <div class="form-group">
+        <label >Email:</label>
+        <input type="email" asp-for="User.Email" required />
+    </div>
+    <div>
+        
+        <label>Password:</label>
+        <input type="password" asp-for="User.Password" required />
+    </div>
+    <button type="submit">@((isLogIn ? "Login" : "Register"))</button>
+</form>

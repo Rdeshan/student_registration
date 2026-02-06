@@ -7,13 +7,13 @@ using StudentRegistration.Domain.Entities;
 namespace student_registration.Controllers
 {
     [ApiController]
-    [Route("api /[Controller]")]
+    [Route("api/[Controller]")]
 
-    public class LoginController : ControllerBase
+    public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
 
-        public LoginController(IAuthService authService )
+        public AuthController(IAuthService authService )
         {
             _authService = authService;
         }
@@ -41,16 +41,13 @@ namespace student_registration.Controllers
                 return BadRequest("enter valid values");
             }
 
-            var isSuccess = await _authService.RegiterUserAsync(user);
+            var isSuccess = await _authService.RegisterUserAsync(user);
             if (isSuccess)
             {
                 return Ok(user);
             }
 
         return BadRequest("could not register the admin");
-
-
-
 
         }
 
